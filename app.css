@@ -1,0 +1,208 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(44, 41, 44);
+    background-color: rgb(247, 239, 247);
+}
+#main-header{
+    background-color: #950740;
+    color: white;
+    padding: 1rem 5%;
+    text-align: center;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    background-color: #950740;
+    color: white;
+    border: 1px solid #950740;
+    cursor: pointer;
+}
+.btn-alt{
+    background-color: transparent;
+    border-color: transparent;
+    color: #950740;
+}
+.btn:hover{
+    background-color: #c3073f;
+    border-color: #c3073f;
+}
+.btn-alt:hover{
+    background-color: #e3afbc;
+    color: white;
+    border-color:transparent; 
+}
+.modal{
+    position: fixed;
+    top: 20%;
+    left: 5%;
+    width: 90%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
+    display: none;
+}
+#backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    display: none;
+}
+#overlay{
+    text-align: center;
+}
+#overlay h2{
+    margin: 0.5rem 0;
+}
+.form-control{
+    margin: 0.5rem 0;
+}
+.form-control label{
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+.form-control input{
+    font: inherit;
+    border: 1px solid rgb(204, 204, 204);
+    width: 15rem;
+    padding: 0.5rem;
+}
+#game-config{
+    width: 90%;
+    max-width: 40rem;
+    margin: 2rem auto;
+    text-align: center ;
+}
+#game-config ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+#game-config li{
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    background-color: rgb(247, 239, 247);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+
+}
+#game-config h3{
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #5d001e;
+}
+#game-config h2{
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+.symbol{
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    color: black;
+    font-weight: bold ;
+}
+#active-game{
+    text-align: center;
+    margin: 2rem 0;
+
+    display: none;
+
+}
+#game-over{
+    width: 75%;
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+    color: white;
+    background-color: #9a1750;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    display: none;
+
+}
+#game-over h2{
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+
+}
+#active-player-name{
+    font-weight: bold;
+    color: #5d001e;
+
+}
+#game-board{
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3,6rem); /* 3column 6rem wide  */
+    grid-template-rows: repeat(3,6rem);
+    justify-content: center;
+    gap: 0.5rem;
+}
+#game-board li{
+    background-color: #e3afbc;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+}
+#game-board li:hover{
+    background-color: #ee4c7c;
+
+}
+#game-board li.disabled{
+    background-color: #ee4c7c;
+    color: white;
+    cursor: default;
+
+}
+.error label{
+    color: red;
+}
+.error input{
+    border-color: red;
+    background-color: rgb(253, 219, 219);
+
+}
+.bx-pencil{
+    font-size: 1.2rem;
+
+}
+
+
+@media (max-width: 640px){
+    #game-config ol{
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal{
+        left: 0;
+    }
+  #game-config li{
+    width: 50%;
+  }
+  #game-board{
+    grid-template-columns: repeat(3,5rem); 
+    grid-template-rows: repeat(3,5rem);
+}
+}
